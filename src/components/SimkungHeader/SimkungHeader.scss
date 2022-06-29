@@ -1,0 +1,41 @@
+.SimkungHeader {
+  position: fixed;
+  width: 100%;
+  padding: 1rem var(--inner-padding);
+  display: flex;
+  transition: 150ms ease-out;
+
+  &--scrolled {
+    background-color: var(--header-bg--scrolled);
+    backdrop-filter: blur(10px);
+  }
+
+  &__logo {
+    display: flex;
+    a {
+      padding: 1rem 1.5rem;
+      transition: 150ms ease-out;
+      border: 1px solid transparent;
+      &:hover {
+        background-color: var(--theme-200);
+        border-radius: 9999px;
+      }
+      &:focus {
+        background-color: var(--theme-200);
+        border-color: var(--theme-300);
+      }
+      &:active {
+        background-color: var(--theme-300);
+      }
+
+      img {
+        width: 2.5rem;
+        margin-right: 0.5rem;
+      }
+      .text {
+        font-size: 1.7rem;
+        font-weight: 700;
+      }
+    }
+  }
+}

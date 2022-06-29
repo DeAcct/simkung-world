@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;300;400;700&display=swap");
+@import url("./color.scss");
+html,
+body,
+header,
+nav,
+main,
+aside,
+section,
+article,
+figure,
+figcaption,
+footer,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+p,
+span,
+ul,
+li,
+ol,
+i,
+address,
+strong,
+form,
+fieldset,
+input,
+textarea,
+legend,
+button,
+summary,
+details,
+select,
+option,
+label,
+img,
+video,
+svg {
+  margin: 0;
+  padding: 0;
+  margin-inline: 0;
+  padding-inline: 0;
+  border: none;
+  color: var(--text-800);
+  font-family: "IBM Plex Sans KR", sans-serif;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.03vw;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  word-break: keep-all;
+  float: none;
+}
+::selection {
+  background-color: var(--theme-500);
+  color: #fff;
+}
+:root {
+  --inner-padding: 1rem;
+}
+
+body {
+  height: 300vh;
+}
+
+header,
+nav,
+main,
+aside,
+section,
+article,
+footer {
+  display: block;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+b {
+  font-weight: 700;
+}
+html {
+  font-size: 0.625em;
+}
+a {
+  text-decoration: none;
+  cursor: default;
+}
+i {
+  font-style: normal;
+}
+button {
+  border-radius: 0;
+  background-color: transparent;
+  cursor: default;
+}
+ul,
+li {
+  list-style: none;
+}
+img {
+  vertical-align: middle;
+}
+summary {
+  list-style: none;
+  &::-webkit-details-marker {
+    display: none;
+  }
+}
+.blind {
+  clip: rect(1px 1px 1px 1px);
+  clip-path: inset(50%);
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.inner {
+  padding: 0 var(--inner-padding);
+}
+
+*:focus {
+  outline: none;
+}
+*::-webkit-scrollbar {
+  display: none;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 9999px;
+}
+.line-break {
+  display: block;
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    --inner-padding: 5rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .btn .text {
+    font-size: 1.7rem;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  a,
+  button,
+  [role="progressbar"],
+  [data-pointer="true"] {
+    cursor: pointer;
+  }
+}
