@@ -1,5 +1,7 @@
 # simkung-world 심쿵월드
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ce212f31-aade-431f-bdd7-5716bd510548/deploy-status)](https://app.netlify.com/sites/neon-beignet-25f151/deploys)
+
 끌리는 대로 만들고, 모두가 참여하는 열린 콘텐츠! 이상형 월드컵!
 
 좋아요, 최근 한 월드컵, 월드컵 진행 상황 중간저장 등 사용하면서 있었으면 했던 기능을 추가할 것이다.
