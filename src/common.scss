@@ -58,15 +58,13 @@ svg {
   float: none;
 }
 ::selection {
-  background-color: var(--theme-500);
+  background-color: var(--base-500);
   color: #fff;
 }
 :root {
   --inner-padding: 1rem;
-}
-
-body {
-  height: 300vh;
+  --header-padding: 2rem;
+  --header-h: 6rem;
 }
 
 header,

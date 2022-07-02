@@ -3,8 +3,8 @@ import { RouterView } from "vue-router";
 import SimkungHeader from "./components/SimkungHeader/SimkungHeader";
 
 export default defineComponent({
-  render() {
-    return (
+  setup() {
+    return () => (
       <>
         <SimkungHeader />
         <RouterView />

@@ -3,6 +3,8 @@ import type { Ref } from "vue";
 import { RouterLink } from "vue-router";
 import logoURL from "@/assets/logo.svg";
 import "./SimkungHeader.scss";
+import UserProfile from "../UserProfile/UserProfile";
+import classNames from "classnames";
 
 export default defineComponent({
   setup() {
@@ -14,9 +16,9 @@ export default defineComponent({
     });
     return () => (
       <header
-        class={`SimkungHeader${
-          isScrolled.value ? " SimkungHeader--scrolled" : ""
-        }`}
+        class={classNames("SimkungHeader", "inner", {
+          "SimkungHeader--scrolled": isScrolled.value,
+        })}
       >
         <h1 class="SimkungHeader__logo">
           <RouterLink to="/">
@@ -24,6 +26,7 @@ export default defineComponent({
             <span class="text">심쿵월드</span>
           </RouterLink>
         </h1>
+        <UserProfile />
       </header>
     );
   },
