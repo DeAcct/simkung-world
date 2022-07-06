@@ -1,17 +1,42 @@
-import { defineComponent, Slots } from "vue";
+import { defineComponent, PropType } from "vue";
+import SplitThumbnail from "../SplitThumbnail/SplitThumbnail";
+import "./WorldcupCard.scss";
 
+interface ThumbnailSrc {
+  left: string;
+  right: string;
+}
 export default defineComponent({
-  setup(props, { slots }) {
+  props: {
+    title: {
+      type: String,
+    },
+    summary: {
+      type: String,
+    },
+    thumbnail: {
+      type: Object as PropType<ThumbnailSrc>,
+    },
+  },
+  setup(props) {
     return () => (
       <article class="WorldcupCard">
-        <div class="WorldcupCard__Thumbnail"></div>
-        <div class="row-bottom">
+        <SplitThumbnail {...props.thumbnail}>{props.title}</SplitThumbnail>
+        <div class="text">
           <h2 class="WorldcupCard__Title">
-            {slots.title ? slots.title() : ""}
+            <a href="#">{props.title}</a>
           </h2>
-          <p class="WorldcupCard__Summary">
-            {slots.summary ? slots.summary() : ""}
-          </p>
+          <a href="#" class="WorldcupCard__Summary">
+            {props.summary}
+          </a>
+        </div>
+        <div class="actions">
+          <button class="WorldcupCard__ActionBtn">
+            <span class="blind">좋아요</span>
+          </button>
+          <button class="WorldcupCard__ActionBtn">
+            <span class="blind">공유하기</span>
+          </button>
         </div>
       </article>
     );

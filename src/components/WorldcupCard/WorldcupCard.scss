@@ -1,0 +1,42 @@
+.WorldcupCard {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1.5rem;
+  border: 2px solid var(--base-800);
+  border-radius: 0.6rem;
+
+  .text {
+    margin-top: 1rem;
+  }
+  &__Title {
+    a {
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+    margin-bottom: 0.7rem;
+  }
+  &__Summary {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  .actions {
+    width: 100%;
+    justify-content: flex-end;
+    display: flex;
+    margin-top: 1.5rem;
+  }
+  &__ActionBtn {
+    display: flex;
+    width: 4.5rem;
+    height: 4.5rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.3rem;
+    border: 2px solid var(--base-800);
+    &:not(:last-child) {
+      margin-right: 0.7rem;
+    }
+  }
+}
