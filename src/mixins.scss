@@ -1,0 +1,14 @@
+@mixin clickable-btn($depth: "0.4rem", $extrude-color, $pressed-color) {
+  transition: 150ms ease-out;
+  &:hover {
+    background-color: $extrude-color;
+  }
+  &:focus {
+    border-color: $pressed-color;
+  }
+  &:active {
+    transform: translate(0, 0);
+    box-shadow: inset $depth $depth 0 $pressed-color;
+    background-color: $extrude-color;
+  }
+}

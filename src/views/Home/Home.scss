@@ -1,3 +1,10 @@
 .Home {
   padding: 9rem var(--inner-padding) 2rem;
 }
+
+@media screen and (min-width: 1024px) {
+  .Home {
+    display: grid;
+    grid: 1fr 1fr 1fr;
+  }
+}

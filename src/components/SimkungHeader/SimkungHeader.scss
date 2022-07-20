@@ -1,3 +1,5 @@
+@use "@/mixins" as *;
+
 .SimkungHeader {
   position: fixed;
   z-index: 100;
@@ -18,25 +20,13 @@
   &__logo {
     display: flex;
     a {
+      display: flex;
+      align-items: center;
       z-index: 2;
       padding: 1rem;
-      border-radius: 0.6rem;
+      border-radius: 9999px;
       border: 2px solid transparent;
-      transition: 150ms ease-out;
-      &:hover {
-        transform: translate(-0.25rem, -0.25rem);
-        box-shadow: 0.4rem 0.4rem 0 var(--base-500);
-      }
-      &:focus {
-        border-color: var(--base-500);
-        transform: translate(-0.25rem, -0.25rem);
-        box-shadow: 0.4rem 0.4rem 0 var(--base-500);
-      }
-      &:active {
-        transform: translate(0, 0);
-        box-shadow: inset 0.4rem 0.4rem 0 var(--base-500);
-        background-color: var(--base-300);
-      }
+      @include clickable-btn(0.4rem, var(--base-300), var(--base-500));
 
       img {
         width: 2.5rem;

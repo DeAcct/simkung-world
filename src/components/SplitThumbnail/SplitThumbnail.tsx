@@ -1,16 +1,16 @@
-import { defineComponent } from "vue";
+import Thumbnail from "@/src/types/Thumbnail";
+import { defineComponent, PropType } from "vue";
 
 export default defineComponent({
   props: {
-    left: {
+    title: {
       type: String,
     },
-    right: {
-      type: String,
+    thumbnail: {
+      type: Object as PropType<Thumbnail>,
     },
   },
-  setup(props, { slots }) {
-    console.log(props);
+  setup(props) {
     return () => (
       <figure class="SplitThumbnail">
         <svg class="SplitThumbnail__Image" viewBox="0 0 1080 720">
@@ -24,16 +24,16 @@ export default defineComponent({
             width="100%"
             x="-30%"
             clip-path="url(#CardThumbLeft)"
-            href={props.left}
+            href={props.thumbnail ? props.thumbnail.left : ""}
           />
           <image
             width="100%"
             clip-path="url(#CardThumbRight)"
-            href={props.right}
+            href={props.thumbnail ? props.thumbnail.right : ""}
           />
         </svg>
         <figcaption class="blind">
-          {slots.title ? slots.title() : ""} 썸네일
+          {props.title ? `${props.title} 썸네일` : ""}
         </figcaption>
       </figure>
     );

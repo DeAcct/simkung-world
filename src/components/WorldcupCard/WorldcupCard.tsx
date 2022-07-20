@@ -1,35 +1,55 @@
 import { defineComponent, PropType } from "vue";
+import Thumbnail from "@/src/types/Thumbnail";
 import SplitThumbnail from "../SplitThumbnail/SplitThumbnail";
 import "./WorldcupCard.scss";
+import { RouterLink } from "vue-router";
 
-interface ThumbnailSrc {
-  left: string;
-  right: string;
-}
 export default defineComponent({
   props: {
     title: {
-      type: String,
+      type: Function as PropType<() => string>,
+      required: true,
     },
     summary: {
-      type: String,
+      type: Function as PropType<() => string>,
+      required: true,
     },
     thumbnail: {
-      type: Object as PropType<ThumbnailSrc>,
+      type: Function as PropType<() => Thumbnail>,
+      required: true,
+    },
+    isMoe: {
+      type: Function as PropType<() => boolean>,
+      required: true,
+    },
+    tags: {
+      type: Function as PropType<() => string[]>,
+      required: true,
+    },
+    link: {
+      type: Function as PropType<() => string>,
+      required: true,
     },
   },
   setup(props) {
     return () => (
       <article class="WorldcupCard">
-        <SplitThumbnail {...props.thumbnail}>{props.title}</SplitThumbnail>
+        <a href={props.link()}>
+          <SplitThumbnail thumbnail={props.thumbnail()} title={props.title()} />
+        </a>
         <div class="text">
           <h2 class="WorldcupCard__Title">
-            <a href="#">{props.title}</a>
+            <a href={props.link()}>{props.title()}</a>
           </h2>
-          <a href="#" class="WorldcupCard__Summary">
-            {props.summary}
-          </a>
+          <p class="WorldcupCard__Summary">{props.summary()}</p>
         </div>
+        <ul class="tags">
+          {props.tags().map((tag) => (
+            <li class="tag">
+              <RouterLink to={`/tag-search/${tag}`}>#{tag}</RouterLink>
+            </li>
+          ))}
+        </ul>
         <div class="actions">
           <button class="WorldcupCard__ActionBtn">
             <span class="blind">좋아요</span>

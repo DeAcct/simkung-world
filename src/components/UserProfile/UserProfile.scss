@@ -1,0 +1,36 @@
+.UserProfile {
+  display: flex;
+  align-items: center;
+  &__Name {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--text-100);
+    margin-right: 0.5rem;
+  }
+  &__Picture {
+    border-radius: 50%;
+    width: 3.8rem;
+    height: 3.8rem;
+    border: 2px solid transparent;
+    transition: 150ms ease-out;
+  }
+  &:focus {
+    &__Picture {
+      border-color: var(--base-500);
+    }
+  }
+  &.simkung-active-link {
+    .UserProfile__Picture {
+      border-color: var(--base-500);
+      box-shadow: 0.25rem 0.25rem var(--base-500);
+    }
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .UserProfile {
+    &:hover &__Picture {
+      border-color: var(--base-900);
+    }
+  }
+}

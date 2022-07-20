@@ -1,3 +1,5 @@
+@use "@/mixins" as *;
+
 .WorldcupCard {
   display: flex;
   flex-direction: column;
@@ -7,21 +9,44 @@
   border-radius: 0.6rem;
 
   .text {
-    margin-top: 1rem;
+    margin-top: 0.75rem;
   }
   &__Title {
     a {
       font-size: 1.8rem;
       font-weight: 700;
+      line-height: 1.4;
     }
     margin-bottom: 0.7rem;
   }
   &__Summary {
-    font-size: 1.2rem;
-    font-weight: 500;
+    font-size: 1.3rem;
+    font-weight: 400;
+  }
+
+  .tags {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    .tag {
+      display: flex;
+      margin-bottom: 0.5rem;
+      a {
+        border-radius: 0.3rem;
+        padding: 0.5rem 0.75rem;
+        font-size: 1.2rem;
+        font-weight: 500;
+        background-color: var(--text-100);
+        @include clickable-btn(0.25rem, var(--text-200), var(--text-300));
+      }
+      &:not(:last-child) {
+        margin-right: 0.5rem;
+      }
+    }
   }
 
   .actions {
+    float: left;
     width: 100%;
     justify-content: flex-end;
     display: flex;

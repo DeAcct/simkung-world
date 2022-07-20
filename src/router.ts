@@ -11,6 +11,11 @@ const routes = [
     name: "login",
     component: () => import("./views/Login/Login"),
   },
+  {
+    path: "/tag-search/:tagName",
+    name: "tag-search",
+    component: () => import("./views/TagSearch/TagSearch"),
+  },
 ];
 
 export const router = createRouter({
